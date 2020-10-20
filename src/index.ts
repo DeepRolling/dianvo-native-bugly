@@ -1,7 +1,7 @@
 import { NativeModules } from 'react-native';
 
 type DianvoNativeBuglyType = {
-  multiply(a: number, b: number): Promise<number>;
+  initSDK(appKey: string): Function; //初始化SDK
 };
 
 const { DianvoNativeBugly } = NativeModules;

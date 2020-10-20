@@ -142,7 +142,9 @@
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = K8S26GZ6X7;
 						LastSwiftMigration = 1110;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -267,8 +269,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = K8S26GZ6X7;
 				INFOPLIST_FILE = DianvoNativeBuglyExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = (
@@ -280,8 +284,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.DianvoNativeBuglyExample.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dianvo.ykd;
 				PRODUCT_NAME = DianvoNativeBuglyExample;
+				PROVISIONING_PROFILE_SPECIFIER = ykd_v2.0_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "DianvoNativeBuglyExample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -295,7 +300,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K8S26GZ6X7;
 				INFOPLIST_FILE = DianvoNativeBuglyExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = (
@@ -307,8 +315,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.DianvoNativeBuglyExample.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dianvo.ykd;
 				PRODUCT_NAME = DianvoNativeBuglyExample;
+				PROVISIONING_PROFILE_SPECIFIER = ykd_v2.0_release;
 				SWIFT_OBJC_BRIDGING_HEADER = "DianvoNativeBuglyExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
