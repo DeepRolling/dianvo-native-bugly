@@ -66,23 +66,19 @@ Method 2:
 ```
 ## Usage
 
-```js
-import DianvoNativeBugly from "dianvo-native-bugly";
-
-// ...
-
-const result = await DianvoNativeBugly.multiply(3, 7);
 ```
-```
-import DianvoNativeBugly from "dianvo-native-bugly";
-  <Button title={"Get Update information"} onPress={async () => {
-            let updateInfo = await DianvoNativeBugly.getUpgradeInfo();
-            console.log("update info : "+updateInfo.versionCode);
-  }}/>
-  <Button title={"app Update"} onPress={async () => {
-            DianvoNativeBugly.checkAppUpgrade({isManual:true,
-                isSilence:false});
-  }}/>
+import {DianvoNativeBuglyType} from "dianvo-native-bugly";
+ DianvoNativeBuglyType.getUpgradeInfo()
+ .then((upgradeInfo) => {
+     console.log(JSON.stringify(upgradeInfo));
+     navigation.push('UpgradePage', {
+         newFeature:upgradeInfo.newFeature,
+         versionName:upgradeInfo.versionName,
+         apkUrl:upgradeInfo.apkUrl,
+         title:upgradeInfo.title,
+         fileSize:upgradeInfo.fileSize
+     } as UpgradeInfo);
+ });
 ```
 
 ## Note
