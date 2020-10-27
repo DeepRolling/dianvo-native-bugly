@@ -1,6 +1,6 @@
 {
   "name": "dianvo-native-bugly",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "基于Bugly封装的组件",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

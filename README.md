@@ -35,7 +35,7 @@ def CONFIG = { k -> "\"${k}\"" }
 
 然后在应用Application入口处调用封装好的初始化函数
 ```java
-import static com.simplernbugly.SimpleRnBuglyModuleKt.initBuglyWithStrategy;
+import static com.dianvonativebugly.DianvoNativeBuglyModuleKt.initBuglyWithStrategy;
 initBuglyWithStrategy(getApplicationContext(),appId,debugMode)
 ```
 note: appId是在bugly控制台申请好的appId,debug模式是指定了bugly是否处于调试模式
@@ -74,7 +74,7 @@ import DianvoNativeBugly from "dianvo-native-bugly";
 const result = await DianvoNativeBugly.multiply(3, 7);
 ```
 ```
-import DianvoNativeBugly from 'dianvo-native-umeng'
+import DianvoNativeBugly from "dianvo-native-bugly";
   <Button title={"Get Update information"} onPress={async () => {
             let updateInfo = await DianvoNativeBugly.getUpgradeInfo();
             console.log("update info : "+updateInfo.versionCode);
