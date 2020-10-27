@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { StyleSheet, View, Text, StatusBar } from 'react-native';
-import DianvoNativeBugly from 'dianvo-native-bugly';
+import { DianvoNativeBuglyType } from 'dianvo-native-bugly';
 
 export default class App extends React.Component {
   componentDidMount() {
-    DianvoNativeBugly.initSDK('bb11655438');
+    DianvoNativeBuglyType.initSDK('bb11655438');
   }
 
   public render() {

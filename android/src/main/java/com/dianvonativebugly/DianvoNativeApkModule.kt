@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.FileProvider
 import com.facebook.react.bridge.*
 import java.io.File
+import java.net.URI
 
 
 class DianvoNativeApkModule (val reactContext: ReactApplicationContext) :
@@ -95,7 +96,7 @@ class DianvoNativeApkModule (val reactContext: ReactApplicationContext) :
    */
   private fun installApkWhenHasPermission(apkDownloadedPath: String,
                                           promise: Promise) {
-    val file = File(apkDownloadedPath)
+    val file = File(URI(apkDownloadedPath))
 
     if (file.exists()) {
       val intent = Intent(Intent.ACTION_VIEW)

@@ -1,7 +1,4 @@
-import type DianvoNativeBuglyType from './DianvoNativeBuglyType';
-import type DianvoNativeApkType from './DianvoNativeApkType';
+import DianvoNativeBuglyType from './DianvoNativeBuglyType';
+import DianvoNativeApkType from './DianvoNativeApkType';
 
-export default {
-  DianvoNativeBuglyType,
-  DianvoNativeApkType,
-};
+export { DianvoNativeBuglyType, DianvoNativeApkType };
