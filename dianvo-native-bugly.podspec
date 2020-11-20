@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
 
   s.dependency "React"
   s.dependency "Bugly"
-  s.dependency "BuglyExtension"
+  # s.dependency "BuglyExtension"
 end
