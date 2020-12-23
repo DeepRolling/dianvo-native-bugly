@@ -76,17 +76,19 @@ class DianvoNativeBuglyModule(val reactContext: ReactApplicationContext) : React
 
     @ReactMethod
     fun checkAppUpgrade(options: ReadableMap) {
-        //用户手动点击检查，非用户点击操作请传false
-        var isManual = true
-        //是否显示弹窗等交互，[true:没有弹窗和toast] [false:有弹窗或toast]
-        var isSilence = false
-        if (options.hasKey("isManual")) {
-            isManual = options.getBoolean("isManual")
+        UiThreadUtil.runOnUiThread {
+            //用户手动点击检查，非用户点击操作请传false
+            var isManual = true
+            //是否显示弹窗等交互，[true:没有弹窗和toast] [false:有弹窗或toast]
+            var isSilence = false
+            if (options.hasKey("isManual")) {
+                isManual = options.getBoolean("isManual")
+            }
+            if (options.hasKey("isSilence")) {
+                isSilence = options.getBoolean("isSilence")
+            }
+            Beta.checkAppUpgrade(isManual, isSilence)
         }
-        if (options.hasKey("isSilence")) {
-            isSilence = options.getBoolean("isSilence")
-        }
-        Beta.checkAppUpgrade(isManual, isSilence)
     }
 
 
