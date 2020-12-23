@@ -23,7 +23,7 @@ RCT_EXPORT_MODULE()
     BuglyConfig *config = [[BuglyConfig alloc] init];
     
     config.unexpectedTerminatingDetectionEnable = YES; //非正常退出事件记录开关，默认关闭
-    config.reportLogLevel = BuglyLogLevelWarn; //报告级别
+    config.reportLogLevel = BuglyLogLevelError; //报告级别
     config.deviceIdentifier = [UIDevice currentDevice].identifierForVendor.UUIDString; //设备标识
     config.blockMonitorEnable = YES; //开启卡顿监控
     config.blockMonitorTimeout = 5; //卡顿监控判断间隔，单位为秒
