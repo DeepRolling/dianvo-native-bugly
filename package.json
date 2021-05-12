@@ -1,7 +1,9 @@
 {
   "name": "dianvo-native-bugly",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "基于Bugly封装的组件",
+  "author": "deepcode <deepcode1024@163.com>",
+  "homepage": "https://github.com/RainDrop-C/react-native-webview-tencentx5#readme",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
@@ -35,13 +37,7 @@
     "ios",
     "android"
   ],
-  "repository": "http://192.168.10.200/npm_modules/dianvo-native-bugly",
-  "author": "sunLeon <xianlin_6189@163.com> (https://github.com/sunleonx)",
   "license": "MIT",
-  "bugs": {
-    "url": "http://192.168.10.200/npm_modules/dianvo-native-bugly/issues"
-  },
-  "homepage": "http://192.168.10.200/npm_modules/dianvo-native-bugly#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^8.3.4",
     "@react-native-community/bob": "^0.16.2",
