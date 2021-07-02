@@ -4,7 +4,7 @@ import { DianvoNativeBuglyType } from 'dianvo-native-bugly';
 
 export default class App extends React.Component {
   componentDidMount() {
-    DianvoNativeBuglyType.initSDK('bb11655438');
+    DianvoNativeBuglyType.initBuglyWithStrategy('bb11655438',true);
   }
 
   public render() {

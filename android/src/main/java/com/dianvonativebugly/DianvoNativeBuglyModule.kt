@@ -21,26 +21,6 @@ import java.io.IOException
 
 
 /**
- * 使用了bugly的多进程策略初始化bugly
- * 避免了多进程的时候重复上报异常
- */
-fun initBuglyWithStrategy(context: Context, appId: String, isDebug: Boolean) {
-    // 获取当前包名
-    val packageName = context.packageName
-    // 获取当前进程名
-    val processName: String? = getProcessName(Process.myPid())
-    // 设置是否为上报进程
-    val strategy = UserStrategy(context)
-    strategy.isUploadProcess = processName == null || processName == packageName
-    //upgrade 包中已经集成了crash report
-    //不自动检查更新也不自动初始化，做成包提供给rn调用
-    Beta.autoCheckUpgrade = false
-    //不启用热更新
-    Beta.canShowApkInfo = false
-    Bugly.init(context, appId, isDebug)
-}
-
-/**
  * 获取进程号对应的进程名
  *
  * @param pid 进程号
@@ -123,7 +103,29 @@ class DianvoNativeBuglyModule(val reactContext: ReactApplicationContext) : React
         }
     }
 
+    /**
+     * 使用了bugly的多进程策略初始化bugly
+     * 避免了多进程的时候重复上报异常
+     */
+    @ReactMethod
+    fun initBuglyWithStrategy(appId: String, debug: Boolean) {
+        UiThreadUtil.runOnUiThread {
+            // 获取当前包名
+            val packageName = reactContext.applicationContext.packageName
+            // 获取当前进程名
+            val processName: String? = getProcessName(Process.myPid())
+            // 设置是否为上报进程
+            val strategy = UserStrategy(reactContext.applicationContext)
+            strategy.isUploadProcess = processName == null || processName == packageName
+            //upgrade 包中已经集成了crash report
+            //不自动检查更新也不自动初始化，做成包提供给rn调用
+            Beta.autoCheckUpgrade = false
+            //不启用热更新
+            Beta.canShowApkInfo = false
+            Bugly.init(reactContext.applicationContext, appId, debug)
+        }
 
+    }
 
 
 }

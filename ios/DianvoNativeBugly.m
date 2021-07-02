@@ -21,7 +21,7 @@ RCT_EXPORT_MODULE()
 //Bugly
 - (void)configureBugly:(NSString *) appKey {
     BuglyConfig *config = [[BuglyConfig alloc] init];
-    
+
     config.unexpectedTerminatingDetectionEnable = YES; //非正常退出事件记录开关，默认关闭
     config.reportLogLevel = BuglyLogLevelError; //报告级别
     config.deviceIdentifier = [UIDevice currentDevice].identifierForVendor.UUIDString; //设备标识
@@ -29,14 +29,14 @@ RCT_EXPORT_MODULE()
     config.blockMonitorTimeout = 5; //卡顿监控判断间隔，单位为秒
     config.applicationGroupIdentifier = @"";
 //    config.delegate = self;
-    
+
 #if DEBUG
     config.debugMode = YES; //SDK Debug信息开关, 默认关闭
     config.channel = @"debug";
 #else
     config.channel = @"release";
 #endif
-    
+
     [Bugly startWithAppId:appKey
 #if DEBUG
     developmentDevice:YES
@@ -47,10 +47,10 @@ RCT_EXPORT_MODULE()
 /**
  * 初始化SDK
 */
-RCT_EXPORT_METHOD(initSDK:(NSString *)appKey)
+RCT_EXPORT_METHOD(initBuglyWithStrategy:(NSString *)appId debug:(BOOL)debug)
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self configureBugly:appKey];
+        [self configureBugly:appId];
     });
 }
 

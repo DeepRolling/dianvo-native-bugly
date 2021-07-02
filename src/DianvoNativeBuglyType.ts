@@ -24,7 +24,7 @@ enum upgradeType {
 
 
 type DianvoNativeBuglyType = {
-  initSDK(appKey: string): Function; //初始化SDK
+  initBuglyWithStrategy(appId: string, debug: boolean): Function; //初始化SDK
 
   /**
    * android only
